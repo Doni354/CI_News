@@ -2,9 +2,20 @@
 
 <?= $this->section('content') ?>
 
-<h2 class="h2">Komunitas Codeigniter Indonesia Mengadakan Meetup</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-<h2 class="h2">Dukungan Keamanan untuk Codeigniter 3 akan barakhir tahun ini</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<div class="container">
+    <?php foreach ($newses as $news) : ?>
+        <div class="row">
+            <div class="col-md-12 mb-2 card">
+                <div class="card-body">
+                    <h5 class="h5"><a href="/news/<?= $news['slug'] ?>"><?= $news['title'] ?></a></h5>
+                    <p><?= substr($news['content'], 0, 120) ?></p>
+                </div>
+            </div>
+            
+        </div>
+
+    <?php endforeach ?>
+</div>
+
 
 <?= $this->endSection() ?>
