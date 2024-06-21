@@ -16,7 +16,7 @@ class News extends BaseController
      siapkan data untuk dikirim ke view dengan nama $newses
      dan isi datanya dengan news yang sudah terbit
     */
-    $data['newses'] = $news->where('status', 'draft')->findAll();
+    $data['newses'] = $news->where('status', 'published')->findAll();
 
     // kirim data ke view
     echo view('news', $data);
